@@ -1,17 +1,17 @@
 # Indocio
 
-Build a documentation site with Nuxt and Nuxt Content. Indocio provides a landing page, searchable documentation, and Markdown components, with IPEX styling and accessible Akaza UI primitives.
+Build your documentation site with Nuxt and Nuxt Content. Use a landing page, search, and Markdown components styled with IPEX. Akaza UI provides keyboard controls and accessibility support.
 
-- Sidebar navigation generated from your content.
+- Organize the sidebar with your content folders and filenames.
 - Syntax highlighting, code tabs, callouts, steps, cards, and API references.
-- Configurable article width, sidebar, and table of contents.
+- Choose your article width, sidebar settings, and table of contents position.
 - Light and dark themes with an optional accent color.
 - Translations and separate documentation spaces for multiple products.
-- A live customizer with copyable theme and layout settings.
+- Preview theme and layout changes, then copy the settings into your app.
 
 ## Get started
 
-Requires Node.js 22.19 or newer and a Nuxt 4 application.
+Use Node.js 22.19 or newer with a Nuxt 4 app.
 
 Install Indocio in your application:
 
@@ -19,7 +19,7 @@ Install Indocio in your application:
 pnpm add @igrislabs/indocio
 ```
 
-Extend the layer in `nuxt.config.ts`:
+Add Indocio to `extends` in `nuxt.config.ts`:
 
 ```ts
 export default defineNuxtConfig({
@@ -76,7 +76,7 @@ Add examples to help readers get started.
 ::
 ```
 
-Sidebar navigation follows Nuxt Content's page order. Numeric prefixes set an explicit order and are removed from URLs. Without prefixes, pages are sorted alphabetically.
+Use folders and filenames to organize your sidebar. Add numeric prefixes such as `1.introduction.md` to set the reading order. Nuxt Content leaves these numbers out of URLs. Use unnumbered filenames for alphabetical order.
 
 Start your Nuxt development server:
 
@@ -84,7 +84,7 @@ Start your Nuxt development server:
 pnpm dev
 ```
 
-If your application has a starter `app/app.vue`, remove it to use Indocio's app shell, which includes page routing and the optional customizer.
+Remove the starter `app/app.vue` to use Indocio's page layout and optional customizer.
 
 ## Configure your site
 
@@ -113,11 +113,11 @@ Header links appear on both the landing page and documentation pages. Use `child
 
 Set `docs.toc.position` to `content` or `right`; the article stays centered on the screen. Adjust `docs.content.width` to change the reading width.
 
-Layout settings resolve from page `docs` frontmatter, then product-space settings, then site configuration. Nested settings merge by field. Import `DocsConfig` and `DocsSettings` from `@igrislabs/indocio/types` for typed configuration.
+Set `docs` in a page's frontmatter to change its layout. Page settings take priority over product settings, which take priority over site settings. Change one field without replacing the rest. Import `DocsConfig` and `DocsSettings` from `@igrislabs/indocio/types` for TypeScript types.
 
 ## Write with Markdown components
 
-Use components directly in Markdown. No imports are needed.
+Use Markdown components without importing them.
 
 Callouts include `::note`, `::tip`, `::warning`, and `::caution`. Other components include tabs, steps, cards, accordions, badges, file trees, code previews, and API reference fields.
 
@@ -141,7 +141,7 @@ export default defineAppConfig({
 ::
 ````
 
-Filenames become tab labels. Each example keeps its syntax highlighting and copy button.
+Add a filename to use it as the tab label. Readers can copy each highlighted example.
 
 ## Customize the theme
 
@@ -168,7 +168,7 @@ export default defineNuxtConfig({
 })
 ```
 
-Use `--primary` and `--primary-foreground` for primary actions. Accent falls back to primary when no separate accent is supplied.
+Use `--primary` and `--primary-foreground` for primary actions. Leave accent unset to use your primary color for accents too.
 
 For a visual preview, enable the customizer in `app/app.config.ts`:
 
@@ -213,9 +213,9 @@ content/
     getting-started/introduction.md
 ```
 
-All language routes are prefixed, including the default language. Search and navigation stay within the selected language. Missing translations return a 404.
+Open translated pages through language-prefixed URLs, such as `/en/getting-started/introduction`. The default language uses a prefix too. Readers search and browse within their selected language.
 
-With i18n disabled, keep your pages directly in `content/`.
+Keep your pages in `content/` if you do not enable i18n.
 
 ## Document multiple products
 
@@ -228,7 +228,9 @@ icon: tabler:box
 space: true
 ```
 
-Each space has its own sidebar and previous/next navigation. Set `indocio.spaces.switcher` to `dropdown` or `tabs` in `app/app.config.ts` to choose the product selector style.
+Create a documentation space for each product to give it a separate sidebar and previous/next links. Set `indocio.spaces.switcher` to `dropdown` or `tabs` in `app/app.config.ts` to choose the product selector style.
+
+Add `index.md` inside each product folder for its home page: `content/inrux/index.md` opens at `/inrux`, and `content/instruo/index.md` opens at `/instruo`. Write a product introduction and add cards linking to its guides. Readers keep the product sidebar on these pages.
 
 ## Extend components
 
@@ -238,4 +240,4 @@ Extension points include `DocsHeaderActions`, `DocsSidebarTop`, `DocsSidebarBott
 
 IPEX UI components are available with the `Ui` prefix, such as `UiButton` and `UiTabs`. Replace `app/components/BrandLogo.vue` and `public/favicon.svg` to use your own branding.
 
-If you define a custom `content.config.ts`, retain the `docs` and `landing` collections. Import the default configuration from `@igrislabs/indocio/content` as a starting point.
+Keep the `docs` and `landing` collections when you add your own `content.config.ts`. Import `@igrislabs/indocio/content` to start with the default configuration.

@@ -1,6 +1,6 @@
 ---
 title: Shortcut
-description: 'Render keyboard shortcut keys in Markdown.'
+description: 'Show keyboard shortcuts in Markdown.'
 navigation:
   icon: tabler:keyboard
 ---
@@ -19,4 +19,4 @@ Use :shortcut{:keys='["⌘", "K"]'} to open documentation search on macOS.
 | ------ | ---------- | -------- |
 | `keys` | `string[]` | Required |
 
-Pass key labels in display order. Standard Markdown `<kbd>` rendering also remains available.
+Pass key labels in the order you want readers to see them. You can also use `<kbd>` in Markdown.

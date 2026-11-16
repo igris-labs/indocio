@@ -1,6 +1,6 @@
 ---
 title: Card Group
-description: 'Arrange documentation cards in a responsive grid.'
+description: 'Arrange cards in a grid that fits the screen.'
 navigation:
   icon: tabler:layout-grid
 ---
@@ -35,8 +35,8 @@ Configure the consuming application.
 
 ## Props
 
-| Prop      | Type | Default |
-| --------- | ---- | ------- |
-| `columns` | `1   | 2       | 3`  | `2` |
+| Prop      | Type             | Default |
+| --------- | ---------------- | ------- |
+| `columns` | `1`, `2`, or `3` | `2`     |
 
-Use a bound numeric value such as `:columns="3"`. Smaller screens reduce the column count automatically. The default slot contains the cards.
+Pass the column count as a number, such as `:columns="3"`. Readers see fewer columns on smaller screens. Place the cards in the default slot.

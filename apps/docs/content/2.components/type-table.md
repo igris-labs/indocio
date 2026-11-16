@@ -1,6 +1,6 @@
 ---
 title: Type Table
-description: 'Present API properties, types, defaults, and descriptions in a table.'
+description: 'List API properties, types, defaults, and descriptions in a table.'
 navigation:
   icon: tabler:table
 ---
@@ -43,4 +43,4 @@ fields:
 ::
 ```
 
-Each entry requires `name` and `type`. Optional properties are `description`, `required`, and `default`. The table scrolls horizontally and can receive keyboard focus.
+Set `name` and `type` for each entry. Add `description`, `required`, and `default` as needed. On smaller screens, readers can focus the table and scroll sideways.

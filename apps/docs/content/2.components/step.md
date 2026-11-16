@@ -1,13 +1,13 @@
 ---
 title: Step
-description: 'Add a titled item to a numbered Steps sequence.'
+description: 'Add a step with a title to a numbered list.'
 navigation:
   icon: tabler:circle-number-1
 ---
 
 ## Usage
 
-Place each `step` inside [Steps](/components/steps). The parent supplies automatic numbering.
+Place each `step` inside [Steps](/components/steps). You do not need to number the steps.
 
 ::steps
 

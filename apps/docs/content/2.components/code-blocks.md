@@ -1,13 +1,13 @@
 ---
 title: Code Blocks
-description: 'Render syntax-highlighted source with a filename and copy action.'
+description: 'Show highlighted code with a filename and copy button.'
 navigation:
   icon: tabler:code
 ---
 
 ## Usage
 
-Use a fenced code block with a language and optional filename. The Markdown renderer supplies `DocsCode` automatically.
+Write a fenced code block with a language and optional filename. Use the standard Markdown syntax below to show highlighted code with a copy button.
 
 ```ts [nuxt.config.ts]
 export default defineNuxtConfig({
@@ -44,7 +44,7 @@ Use [Code tabs](/components/code-tabs) to group examples, [Code Tree](/component
 
 ## Markdown and MDC highlighting
 
-Use `md`, `markdown`, or `mdc` for Markdown examples. Headings, emphasis, links, MDC component names and attributes, named slots, and YAML props receive syntax colors. Code fences inside the example keep their own language highlighting, including filenames and aliases such as `typescript`.
+Use `md`, `markdown`, or `mdc` for Markdown examples. Highlight headings, emphasis, links, component names, attributes, slots, and YAML props in your examples. Add code fences inside the example to highlight each code block in its own language. You can include filenames and language aliases such as `typescript`.
 
 ````md
 ## Example

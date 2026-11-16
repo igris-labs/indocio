@@ -1,45 +1,45 @@
-title: The foundation for your documentation.
-description: A documentation system built for Nuxt. Write in Markdown, keep your content in your app, and build on IPEX and Akaza UI.
+title: Build your documentation with Nuxt.
+description: Write guides in Markdown and organize them in your app. Use Indocio for navigation, search, and layouts built with IPEX and Akaza UI.
 links:
   - label: Get started
     to: /getting-started/introduction
   - label: Explore configuration
     to: /getting-started/configuration
-featuresTitle: Built for the way you document.
+featuresTitle: Write, organize, and customize your docs.
 features:
-  - title: Your content. Your project.
-    description: Markdown, navigation, and landing page values live together in your app. The layer takes care of the reading experience.
+  - title: Keep your content in your app.
+    description: Write Markdown, set your page order, and configure your landing page in one content folder.
     code: |
       apps/docs/content/
         index.yml
         getting-started/
           introduction.md
           configuration.md
-  - title: One layer to get started.
-    description: Extend Indocio from a Nuxt app. Override its components and layouts with Nuxt's file conventions.
+  - title: Add Indocio to your Nuxt app.
+    description: Add Indocio to your Nuxt configuration. Replace components and layouts with matching files in your app.
     code: |
       export default defineNuxtConfig({
         extends: ['@igrislabs/indocio'],
       })
-  - title: Ready for more languages.
+  - title: Translate your documentation.
     description: Enable i18n when you need it. Keep each translation in its own content folder.
     code: |
       content/
         en/index.yml
         cn/index.yml
         fr/index.yml
-  - title: IPEX, all the way through.
-    description: Shared tokens, coordinated components, and light and dark themes. Akaza UI handles the headless interactions.
+  - title: Use IPEX components.
+    description: Build with IPEX components in light and dark mode. Use Akaza UI for keyboard controls and accessibility.
     code: |
       <UiButton>Get started</UiButton>
       <UiTabs :items="items" />
-  - title: Markdown with room to grow.
-    description: Headings, code blocks, callouts, and Vue components belong in the same document. Add your own when you need them.
+  - title: Add components to Markdown.
+    description: Write headings and code blocks, then add callouts or Vue components in the same document.
     code: |
       ::note{title="A useful detail"}
       Write the detail in Markdown.
       ::
 preview:
-  title: See the reading experience.
-  description: This preview renders the actual introduction from this documentation app. Open a page or inspect the layer configuration.
+  title: Preview a documentation page.
+  description: Read the introduction below, then open the guide or check the configuration.
   to: /getting-started/introduction

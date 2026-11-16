@@ -8,7 +8,7 @@ navigation:
 ## Usage
 
 ::collapsible{title="Optional implementation details"}
-Use a collapsible for supplementary Markdown without introducing an accordion group.
+Put extra details inside a collapsible section.
 ::
 
 ```md

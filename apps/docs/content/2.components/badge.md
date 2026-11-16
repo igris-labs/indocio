@@ -20,4 +20,4 @@ navigation:
 | ------- | ----------------------------------------- | --------- |
 | `color` | `neutral`, `accent`, `success`, `warning` | `neutral` |
 
-The default slot supplies the badge text.
+Write the badge text in the default slot.

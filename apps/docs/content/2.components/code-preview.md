@@ -1,6 +1,6 @@
 ---
 title: Code Preview
-description: 'Pair a rendered example with its source code.'
+description: 'Show a working example beside its source code.'
 navigation:
   icon: tabler:eye
 ---
@@ -33,4 +33,4 @@ Use the `preview` slot for the rendered example and `code` for its source.
 ::
 ````
 
-`title` defaults to `Preview`. The default slot can also supply the preview. This displays authored content; it does not execute code strings.
+Use `title` to name the example, or keep the default `Preview`. You can write the example in the `preview` slot or the default slot. Put the source code in the `code` slot.

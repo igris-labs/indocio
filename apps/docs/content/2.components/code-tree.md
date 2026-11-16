@@ -1,13 +1,13 @@
 ---
 title: Code Tree
-description: 'Switch between source files using filename-labeled tabs.'
+description: 'Choose a filename to read its source code.'
 navigation:
   icon: tabler:files
 ---
 
 ## Usage
 
-`code-tree` provides a source-file selector using filenames from code fences. Unlike `file-tree`, it displays each file's source.
+Wrap code blocks in `code-tree` to let readers choose which file to read. Add a filename to each block for its label.
 
 ::code-tree
 
@@ -35,4 +35,4 @@ export default defineAppConfig({ indocio: { name: 'Your project' } })
 ::
 ````
 
-The selector supports keyboard navigation through IPEX Tabs. Filenames are labels, so duplicate filenames still receive independent internal values.
+Use the arrow keys to choose a file. You can use the same filename for more than one example.

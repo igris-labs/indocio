@@ -1,13 +1,13 @@
 ---
 title: Field
-description: 'Describe an API parameter, its type, default, and required state.'
+description: 'Document an API parameter, its type, and its default value.'
 navigation:
   icon: tabler:forms
 ---
 
 ## Usage
 
-`field-group` contains `field` components describing an API. These are documentation fields, separate from `Ui*` form controls.
+Place `field` components inside `field-group` to document API parameters. Use `Ui*` form controls to build forms.
 
 ::field-group
 
@@ -35,6 +35,6 @@ The article's maximum width.
 ::
 ```
 
-`field.name` is required. Optional props are `type`, Boolean `required`, and `default-value`; the default slot holds the description.
+Set `name` for each field. Add `type` and `default-value` as needed. Add the Boolean `required` prop to mark a required parameter. Write the description in the default slot.
 
 See [Field Group](/components/field-group) for grouping related API fields.

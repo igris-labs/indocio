@@ -1,6 +1,6 @@
 ---
 title: File Tree
-description: 'Explore project structure with file-type icons, collapsible folders, and keyboard navigation.'
+description: 'Show files and folders that readers can expand with a mouse or keyboard.'
 navigation:
   icon: tabler:folders
 ---
@@ -48,13 +48,13 @@ items:
 ::
 ```
 
-Each item requires a non-empty `name`. An item with `children` is an expandable folder. `label` defaults to `Project structure`. Trees support up to 20 folder levels.
+Give each item a `name`. Add `children` to create a folder. Use `label` to name the tree, or keep the default `Project structure`. You can nest folders up to 20 levels deep.
 
 ## Interaction
 
-Folders start expanded. Click a folder row or its chevron to collapse or expand it. Files and folders at the same depth share a label column; file icons reflect the filename extension.
+Folders start expanded. Click a folder row or its chevron to collapse or expand it. Scan names at the same folder level in one column. Check the icons for each file type.
 
-The tree uses the IPEX Tree component and follows its control sizing, focus, hover, and touch-target recipes. Filename labels use monospace, and long names show their full text on hover.
+Read filenames in a monospace font. Hover over a long name to read it in full. Use the mouse or the keyboard controls below to move through the tree.
 
 | Key         | Action                                    |
 | ----------- | ----------------------------------------- |

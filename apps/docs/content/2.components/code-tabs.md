@@ -7,7 +7,7 @@ navigation:
 
 ## Multiple files
 
-Wrap fenced code blocks in `::code-tabs`. Filenames become tab labels. Each tab keeps its own code and copy button.
+Wrap fenced code blocks in `::code-tabs`. Add filenames to use them as tab labels. Readers can copy the code from each tab.
 
 ::code-tabs{label="Layer configuration files"}
 
@@ -73,11 +73,11 @@ const project = 'Indocio'
 
 ## Keyboard navigation
 
-Focus a tab and use the left or right arrow keys to switch examples. Only the active code panel is exposed to assistive technology. Tab to its copy button to copy the original code, without formatting markup.
+Focus a tab and use the left or right arrow keys to switch examples. Screen reader users read the active panel. Press Tab to reach its copy button and copy the original code.
 
 ## Package commands
 
-Standalone install-command fences already provide package-manager tabs. Use code tabs for related files or alternate implementations.
+Write an install command in its own shell code block to show package-manager tabs. Use code tabs for related files or different approaches.
 
 ```sh
 pnpm add @igrislabs/indocio

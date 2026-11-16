@@ -27,4 +27,4 @@ export default defineNuxtConfig({ extends: ['@igrislabs/indocio'] })
 ::
 ````
 
-`title` defaults to `Show code`. The code remains copyable when expanded.
+Use `title` to name the heading, or keep the default `Show code`. Readers can expand the example and copy its code.

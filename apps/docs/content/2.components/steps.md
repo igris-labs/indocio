@@ -1,6 +1,6 @@
 ---
 title: Steps
-description: 'Present an ordered sequence of documentation steps.'
+description: 'Guide readers through numbered steps.'
 navigation:
   icon: tabler:list-numbers
 ---
@@ -37,6 +37,6 @@ Add `@igrislabs/indocio` to the app's `extends` array.
 ::
 ```
 
-`step.title` is required. Steps use an ordered list and automatic numbering.
+Give each step a `title`. You do not need to number the steps.
 
 See [Step](/components/step) for individual step props.

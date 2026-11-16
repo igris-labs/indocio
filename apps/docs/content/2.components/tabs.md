@@ -1,13 +1,13 @@
 ---
 title: Tabs
-description: 'Group related Markdown with accessible, optionally synchronized tabs.'
+description: 'Group Markdown in tabs and share the selection between tab groups.'
 navigation:
   icon: tabler:layout-navbar
 ---
 
 ## Usage
 
-Use `tabs` and `tab-item` for explanations, commands, or mixed Markdown. Each item requires a title. Provide a stable `value` when synchronizing tabs; values must be unique within a group.
+Use `tabs` and `tab-item` for explanations, commands, or mixed Markdown. Give each item a title and a unique `value`. Use matching values across groups to keep their selections in sync.
 
 ::tabs{label="Framework instructions" sync="framework"}
 
@@ -55,7 +55,7 @@ Vue supplies the component model used by IPEX and Akaza UI.
 | `default-value` | First item | Initial item value                                                    |
 | `sync`          | Unset      | Share the selected value with groups using this key during navigation |
 
-Groups without `sync` are independent. Package-manager code blocks automatically share their package-manager selection. Use [Code tabs](/components/code-tabs) for filename-labeled code fences.
+Omit `sync` to keep a tab group separate. For package-manager commands, readers keep their selection across code blocks. Use [Code tabs](/components/code-tabs) to label code examples with filenames.
 
 ## Tab Item
 
@@ -68,4 +68,4 @@ Each `tab-item` must be a direct child of `tabs`. The default slot contains the 
 | `title` | `string` | Required               |
 | `value` | `string` | Derived from the title |
 
-The default slot holds the panel's Markdown. Values must be unique within the group. Supply stable values when using the parent's `sync` prop.
+Write the panel's Markdown in the default slot. Choose a unique `value` for each item. Use matching values across groups that share a `sync` key.

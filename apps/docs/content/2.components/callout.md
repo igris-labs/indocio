@@ -1,6 +1,6 @@
 ---
 title: Callouts
-description: 'Highlight supporting information with a title and semantic color.'
+description: 'Highlight a note, tip, or warning with a title and color.'
 navigation:
   icon: tabler:info-circle
 ---
@@ -17,12 +17,12 @@ Create a Nuxt application before extending the Indocio layer.
 ::
 ```
 
-Use `callout` to choose a semantic color explicitly, or use one of the variants below for a fixed color. All callouts accept Markdown in their default slot.
+Choose a color with `callout`, or use `note`, `tip`, `warning`, or `caution` for a preset. Write Markdown inside the callout.
 
 ## Note
 
 ::note{title="Note"}
-Your content lives in the consuming application.
+Keep your content in your app.
 ::
 
 ```md

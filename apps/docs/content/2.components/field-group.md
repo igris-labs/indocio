@@ -7,7 +7,7 @@ navigation:
 
 ## Usage
 
-Place [Field](/components/field) components inside the default slot. This is an API documentation component; use `UiField` for an interactive form field.
+Place [Field](/components/field) components inside the default slot to describe API options. Use `UiField` to build a form.
 
 ::field-group
 
@@ -37,4 +37,4 @@ The maximum reading width.
 
 ## Slots
 
-The default slot contains API fields. `field-group` has no configuration props.
+Place API fields in the default slot. You do not need to pass any props to `field-group`.

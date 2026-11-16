@@ -10,11 +10,11 @@ navigation:
 ::accordion
 
 :::accordion-item{title="Can I override a component?" value="override"}
-Yes. Add the identically named component in your app's `components/docs/` directory.
+Yes. Add a component with the same filename in your app's `app/components/docs/` directory.
 :::
 
 :::accordion-item{title="Does Markdown need imports?" value="imports"}
-No. Documentation authoring components are registered globally.
+Use the Markdown components without imports.
 :::
 
 ::
@@ -29,11 +29,11 @@ Yes. Add the identically named component in your app.
 ::
 ```
 
-`type` is `single` by default. Use `multiple` to allow several open items. Each item requires a `title`; `value` defaults to its title and must be unique.
+Use the default `single` type to open one item at a time, or `multiple` to open several. Give each item a `title` and a unique `value`. Omit `value` to use the title.
 
 ## Accordion Item
 
-Each `accordion-item` belongs inside `accordion`. The default slot contains the expandable Markdown.
+Place `accordion-item` inside `accordion`. Write its Markdown between the opening and closing markers.
 
 ### Props
 
@@ -42,4 +42,4 @@ Each `accordion-item` belongs inside `accordion`. The default slot contains the 
 | `title` | `string` | Required  |
 | `value` | `string` | The title |
 
-Values must be unique within the group. The default slot contains the expandable Markdown.
+Choose a different `value` for each item. Write the panel content in the default slot.

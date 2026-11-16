@@ -1,13 +1,13 @@
 ---
 title: Package Commands
-description: 'Render synchronized package-manager tabs for installation commands.'
+description: 'Show install commands for pnpm, npm, yarn, and Bun.'
 navigation:
   icon: tabler:package
 ---
 
 ## Usage
 
-Write a standalone shell fence containing a supported install command. Indocio renders the package-manager selector automatically.
+Write an install command in its own shell code block. Readers can choose their package manager with the tabs above the command.
 
 ```sh
 pnpm add @igrislabs/indocio
@@ -19,11 +19,11 @@ pnpm add @igrislabs/indocio
 ```
 ````
 
-The selector offers pnpm, npm, yarn, and Bun. Package-manager selections are shared across command blocks during navigation. Each panel includes a copy button.
+Choose pnpm, npm, yarn, or Bun. Keep that choice across command blocks as you move between pages. Use the copy button for the selected command.
 
 ## Direct component usage
 
-When authoring custom commands, provide every package manager explicitly:
+To show custom commands, provide a command for each package manager:
 
 ::package-commands{:commands='{"pnpm":"pnpm add @igrislabs/indocio","npm":"npm install @igrislabs/indocio","yarn":"yarn add @igrislabs/indocio","bun":"bun add @igrislabs/indocio"}'}
 ::
