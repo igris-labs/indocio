@@ -3,6 +3,7 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "postinstall": "pnpm --filter @igrislabs/indocio dev:prepare",
     "dev": "pnpm --filter @indocio/docs dev",
     "build": "pnpm --filter @indocio/docs build",
     "generate": "pnpm --filter @indocio/docs generate",
