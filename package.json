@@ -1,0 +1,27 @@
+{
+  "name": "indocio-workspace",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "pnpm --filter @indocio/docs dev",
+    "build": "pnpm --filter @indocio/docs build",
+    "generate": "pnpm --filter @indocio/docs generate",
+    "preview": "pnpm --filter @indocio/docs preview",
+    "lint": "oxlint .",
+    "lint:fix": "oxlint . --fix",
+    "format": "oxfmt .",
+    "format:check": "oxfmt --check .",
+    "typecheck": "pnpm -r typecheck",
+    "test": "pnpm --filter @igrislabs/indocio test",
+    "check": "pnpm lint && pnpm format:check && pnpm typecheck && pnpm test",
+    "test:integration": "pnpm --filter @igrislabs/indocio test:integration"
+  },
+  "devDependencies": {
+    "oxfmt": "^0.78.0",
+    "oxlint": "^1.93.0"
+  },
+  "engines": {
+    "node": ">=22.19.0"
+  },
+  "packageManager": "pnpm@10.7.1"
+}

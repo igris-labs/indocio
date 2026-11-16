@@ -1,0 +1,65 @@
+name: Publish to NPM
+
+on:
+  release:
+    types: [published]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: npm-publish
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v6
+        with:
+          ref: ${{ github.event.release.tag_name }}
+          persist-credentials: false
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+          registry-url: https://registry.npmjs.org/
+          scope: '@igrislabs'
+
+      - name: Enable pnpm
+        run: corepack enable
+
+      - name: Verify release version
+        env:
+          RELEASE_TAG: ${{ github.event.release.tag_name }}
+        run: |
+          node --input-type=module <<'NODE'
+          import assert from 'node:assert/strict'
+          import { readFileSync } from 'node:fs'
+          const pkg = JSON.parse(readFileSync('packages/indocio/package.json', 'utf8'))
+          assert.equal(pkg.name, '@igrislabs/indocio')
+          assert.notEqual(pkg.private, true)
+          assert.equal(process.env.RELEASE_TAG, `v${pkg.version}`, 'Release tag must match the package version')
+          NODE
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Validate and build
+        run: |
+          pnpm lint
+          pnpm typecheck
+          pnpm test
+          pnpm test:integration
+          pnpm build
+
+      - name: Inspect package
+        run: pnpm --filter @igrislabs/indocio exec npm pack --dry-run --ignore-scripts --workspaces=false
+
+      - name: Publish to NPM
+        run: pnpm --filter @igrislabs/indocio publish --no-git-checks --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

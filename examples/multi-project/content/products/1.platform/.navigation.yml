@@ -1,0 +1,10 @@
+title: Platform example
+description: An independent product documentation space.
+icon: tabler:box
+space: true
+redirect: introduction
+docs:
+  content:
+    width: 46rem
+  toc:
+    position: right

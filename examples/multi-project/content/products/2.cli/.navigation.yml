@@ -1,0 +1,5 @@
+title: CLI example
+description: A separate command-line product.
+icon: tabler:terminal
+space: true
+redirect: installation
